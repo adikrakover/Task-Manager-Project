@@ -59,17 +59,25 @@ export class RegisterComponent implements OnInit {
 
     this.authService.register(this.registerForm.value).subscribe({
       next: (res: any) => {
-        if (res?.token) {
+        console.log('Server response received:', res); // בדיקה 1
+        
+        if (res && res.token) {
+          console.log('Token found, saving to localStorage...'); // בדיקה 2
           localStorage.setItem('token', res.token);
+          
+          console.log('Navigating to teams...'); // בדיקה 3
           this.router.navigate(['/teams']);
+          
           this.showNotification('נרשמת בהצלחה!');
+        } else {
+          console.log('Response received but no token found in it.'); // בדיקה 4
         }
       },
       error: (err) => {
-        const msg = err.error?.message || 'שגיאה בתהליך ההרשמה. נסה שוב.';
-        this.showNotification(msg);
+        console.error('API Error:', err);
       }
     });
+    
   }
 
   private showNotification(msg: string) {
