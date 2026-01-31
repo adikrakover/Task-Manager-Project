@@ -1,0 +1,60 @@
+.task-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ebebeb;
+    transition: all 0.2s ease;
+  }
+  
+  .task-row:hover {
+    background-color: #fcfcfc;
+    border-color: #dcdcdc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .task-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .task-checkbox {
+    width: 100%;
+  }
+  
+  .task-text {
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    margin-right: 8px; /* רווח מהריבוע של ה-Checkbox */
+  }
+  
+  /* עיצוב למשימה שהושלמה */
+  .task-done {
+    background-color: #f9f9f9;
+    opacity: 0.7;
+  }
+  
+  .task-done .task-text {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  /* צבע אדום עדין במעבר על הפח */
+  button[mat-icon-button]:hover {
+    background-color: rgba(244, 67, 54, 0.1);
+  }
+  .task-actions {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  
+  .comments-section-wrapper {
+    margin-top: -8px; /* מצמיד את התגובות למשימה */
+    margin-bottom: 16px;
+  }

@@ -1,0 +1,48 @@
+<div class="login-wrapper" dir="rtl">
+    <mat-card class="login-card">
+      <div class="header">
+        <h2>הרשמה למערכת</h2>
+      </div>
+  
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>שם מלא</mat-label>
+          <input matInput formControlName="name" placeholder="הכנס שם מלא">
+          <mat-icon matSuffix>person</mat-icon>
+          @if (registerForm.get('name')?.invalid && registerForm.get('name')?.touched) {
+            <mat-error>שם חייב להכיל לפחות 2 תווים</mat-error>
+          }
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>אימייל</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="email@example.com">
+          <mat-icon matSuffix>email</mat-icon>
+          @if (registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
+            <mat-error>נא להזין כתובת אימייל תקינה</mat-error>
+          }
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>סיסמה</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
+            <mat-error>הסיסמה חייבת להיות לפחות 6 תווים</mat-error>
+          }
+        </mat-form-field>
+  
+        <button mat-raised-button class="login-btn" type="submit">
+          צור חשבון
+        </button>
+      </form>
+  
+      <div class="footer">
+        <span>כבר יש לך חשבון?</span>
+        <a routerLink="/login">התחבר כאן</a>
+      </div>
+    </mat-card>
+  </div>

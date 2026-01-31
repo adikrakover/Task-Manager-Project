@@ -1,0 +1,13 @@
+# התעלמות מתיקיות הספריות בכל הרמות
+node_modules/
+**/node_modules/
+
+# התעלמות ספציפית לפי שמות התיקיות שלך
+TaskManagerClient/node_modules/
+WolfTasksServer_New/node_modules/
+
+# תוצרי בנייה וקבצים זמניים
+dist/
+.angular/
+.vscode/
+.env

@@ -1,0 +1,68 @@
+.dashboard-wrapper {
+    padding: 40px 20px;
+    background-color: #f8f9fb;
+    min-height: 100vh;
+  }
+  
+  .container.small-container {
+    max-width: 600px; /* רשימת משימות נראית טוב יותר כשהיא צרה ומרוכזת */
+    margin: 0 auto;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .add-task-card {
+    margin-bottom: 25px;
+    padding: 15px 20px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+  }
+  
+  .add-task-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .task-input {
+    flex-grow: 1;
+  }
+  
+  /* ביטול השוליים התחתונים המובנים של Material כדי שהכפתור יתיישר */
+  ::ng-deep .task-input .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+  
+  .add-btn {
+    height: 52px;
+    background-color: #7b68ee !important;
+    font-weight: 600 !important;
+    padding: 0 25px !important;
+  }
+  
+  .tasks-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* יוצר הפרדה דקה בין המשימות */
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 60px;
+    background-color: white;
+    border-radius: 12px;
+    border: 2px dashed #e0e0e0;
+    color: #888;
+  }
+  
+  .empty-state mat-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: #4caf50;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }

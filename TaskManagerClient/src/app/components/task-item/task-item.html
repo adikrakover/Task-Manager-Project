@@ -1,0 +1,29 @@
+<div class="task-wrapper">
+    <div class="task-row" [class.task-done]="task.completed" dir="rtl">
+      <div class="task-content">
+        <mat-checkbox 
+          [checked]="task.completed" 
+          (change)="onToggle()"
+          color="primary"
+          class="task-checkbox">
+          <span class="task-text">{{ task.title }}</span>
+        </mat-checkbox>
+      </div>
+    
+      <div class="task-actions">
+        <button mat-icon-button color="primary" (click)="toggleComments()" matTooltip="הצג תגובות">
+          <mat-icon>chat_bubble_outline</mat-icon>
+        </button>
+  
+        <button mat-icon-button color="warn" (click)="onDelete()" matTooltip="מחק משימה">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </div>
+    </div>
+  
+    @if (showComments()) {
+      <div class="comments-section-wrapper">
+        <app-comment-section [taskId]="task.id"></app-comment-section>
+      </div>
+    }
+  </div>

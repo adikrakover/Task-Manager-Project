@@ -1,0 +1,44 @@
+<div class="dashboard-wrapper" dir="rtl">
+    <div class="container small-container">
+      
+      <header class="page-header">
+        <h2>רשימת משימות</h2>
+        <p>נהלו את המשימות שלכם וסמנו את מה שבוצע</p>
+      </header>
+  
+      <mat-card class="add-task-card">
+        <div class="add-task-form">
+          <mat-form-field appearance="outline" class="task-input">
+            <mat-label>מה המשימה הבאה?</mat-label>
+            <input 
+              matInput 
+              [(ngModel)]="newTaskTitle" 
+              (keyup.enter)="addTask()"
+              placeholder="למשל: לאפיין מסך פרופיל">
+            <mat-icon matSuffix>playlist_add</mat-icon>
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary" class="add-btn" 
+                  (click)="addTask()" [disabled]="!newTaskTitle.trim()">
+            הוסף
+          </button>
+        </div>
+      </mat-card>
+  
+      <div class="tasks-list-container">
+        @for (t of tasks(); track t.id) {
+          <app-task-item 
+            [task]="t" 
+            (delete)="removeTask($event)" 
+            (toggle)="toggleTask($event)">
+          </app-task-item>
+        } @empty {
+          <div class="empty-state">
+            <mat-icon>task_alt</mat-icon>
+            <p>כל המשימות הושלמו! אפשר לנוח.</p>
+          </div>
+        }
+      </div>
+  
+    </div>
+  </div>

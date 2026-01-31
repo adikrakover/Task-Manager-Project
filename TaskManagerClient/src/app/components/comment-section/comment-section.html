@@ -1,0 +1,21 @@
+<div class="comments-container" dir="rtl">
+    <div class="comments-list">
+      @for (c of comments(); track c.id) {
+        <div class="comment-bubble">
+            <span class="user-name">{{ c.author_name || 'משתמש' }}:</span>
+                      <span class="comment-text">{{ c.body }}</span>
+        </div>
+      } @empty {
+        <p class="no-comments">אין תגובות עדיין למשימה זו.</p>
+      }
+    </div>
+  
+    <div class="add-comment-row">
+      <mat-form-field appearance="fill" class="comment-field">
+        <input matInput [(ngModel)]="newCommentText" (keyup.enter)="sendComment()" placeholder="הוסף תגובה...">
+      </mat-form-field>
+      <button mat-icon-button color="primary" (click)="sendComment()" [disabled]="!newCommentText.trim()">
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+  </div>

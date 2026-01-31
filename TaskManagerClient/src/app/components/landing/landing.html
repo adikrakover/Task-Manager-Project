@@ -1,0 +1,141 @@
+<div class="landing-page" dir="rtl">
+   <!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <mat-icon class="logo-icon">rocket_launch</mat-icon> <!-- 👈 שינוי אייקון -->
+        <span class="logo-text">WorkFlow Pro</span> <!-- 👈 שינוי שם -->
+      </div>
+      
+      <div class="nav-links">
+        <a href="#features" class="nav-link">יכולות</a>
+        <button mat-button routerLink="/login" class="sign-in-btn">כניסה</button>
+        <button mat-raised-button routerLink="/register" class="get-started-btn">
+          הצטרף עכשיו
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="trust-badge">
+          <mat-icon>verified</mat-icon>
+          <span>נבחר על ידי אלפי מנהלי פרויקטים</span>
+        </div>
+  
+        <h1 class="hero-title">
+          נהל את הפרויקטים שלך.<br>
+          <span class="hero-title-highlight">בצורה מושלמת.</span>
+        </h1>
+  
+        <p class="hero-description">
+          WorkFlow Pro מספק לך את כל הכלים לנהל פרויקטים, משימות וצוותים
+          בממשק אחד פשוט ואינטואיטיבי. הפוך כל פרויקט להצלחה.
+        </p>
+  
+        <div class="hero-buttons">
+          <button mat-raised-button routerLink="/register" class="primary-cta">
+            <mat-icon>arrow_back</mat-icon>
+            התחל חינם
+          </button>
+        </div>
+      </div>
+  
+      <div class="hero-visual">
+        <div class="hero-visual">
+            <!-- אילוסטרציה פשוטה וצבעונית -->
+            <div class="visual-container">
+              <div class="visual-card">
+                <div class="card-icon-large">
+                  <mat-icon>task_alt</mat-icon>
+                </div>
+                <h3>ניהול משימות</h3>
+                <p>עקבו אחרי כל המשימות בקלות</p>
+              </div>
+      
+              <div class="visual-card">
+                <div class="card-icon-large">
+                  <mat-icon>groups</mat-icon>
+                </div>
+                <h3>שיתוף פעולה</h3>
+                <p>עבדו יחד עם הצוות בזמן אמת</p>
+              </div>
+      
+              <div class="visual-card">
+                <div class="card-icon-large">
+                  <mat-icon>trending_up</mat-icon>
+                </div>
+                <h3>מעקב התקדמות</h3>
+                <p>ראו את ההתקדמות בזמן אמת</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stats-container">
+        @for (stat of stats; track stat.value) {
+          <div class="stat-item">
+            <h3 class="stat-value">{{ stat.value }}</h3>
+            <p class="stat-label">{{ stat.label }}</p>
+          </div>
+        }
+      </div>
+    </section>
+  
+    <!-- Features Section -->
+    <!-- Features Section -->
+<section class="features-section" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">הכלים המושלמים לעבודה יעילה</h2>
+        <p class="section-description">
+          כל מה שאתם צריכים כדי להצליח בניהול פרויקטים
+        </p>
+      </div>
+  
+      <div class="features-grid">
+        @for (feature of features; track feature.title) {
+          <div class="feature-card">
+            <div class="feature-icon">
+              <mat-icon>{{ feature.icon }}</mat-icon>
+            </div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-description">{{ feature.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">מוכנים לקפוץ למים?</h2>
+      <p class="cta-description">הצטרפו למאות מנהלי פרויקטים מצליחים</p>
+      <button mat-raised-button routerLink="/register" class="cta-button">
+        צרו חשבון בחינם
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <mat-icon class="footer-logo">rocket_launch</mat-icon>
+          <span class="footer-logo-text">WorkFlow Pro</span>
+        </div>
+        <p class="footer-text">© 2026 WorkFlow Pro. כל הזכויות שמורות.</p>
+      </div>
+    </div>
+  </footer>
+  </div>

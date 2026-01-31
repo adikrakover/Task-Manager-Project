@@ -1,0 +1,121 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+/* Global Styles with Heebo Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Heebo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: rtl;
+  }
+  
+  /* Apply Heebo to all Material components */
+  .mat-mdc-button,
+  .mat-mdc-raised-button,
+  .mat-mdc-outlined-button,
+  .mat-mdc-text-button,
+  .mat-mdc-icon-button,
+  .mat-mdc-card,
+  .mat-mdc-form-field,
+  .mat-mdc-select,
+  .mat-mdc-option,
+  input,
+  textarea,
+  button {
+    font-family: 'Heebo', 'Segoe UI', sans-serif !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Heebo', 'Segoe UI', sans-serif !important;
+  }
+/* הגדרות בסיסיות כדי שהכל ייראה ממורכז ונקי */
+html, body { height: 100%; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fb;
+    direction: rtl;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 32px;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+  }
+  /* מבטיח שהספינר יהיה במרכז הכפתור */
+.login-btn ::ng-deep .mat-mdc-button-touch-target {
+    display: none;
+  }
+  
+  .login-btn mat-spinner {
+    margin: 0 auto;
+  }
+  
+  /* ביטול שוליים מיותרים של Material שדוחפים את הכרטיס */
+  .mat-mdc-card-header {
+    padding: 0 !important;
+    justify-content: center;
+  }
+  
+  /* התאמת גובה ה-Wrapper למניעת גלילה מיותרת */
+  body, html {
+    overflow: hidden;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .header img {
+    width: 140px;
+    margin-bottom: 16px;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* התאמת צבע הסגול של ClickUp לכפתור של Material */
+  .login-btn {
+    width: 100%;
+    padding: 24px !important;
+    font-size: 16px !important;
+    background-color: #7b68ee !important; /* סגול ClickUp */
+    color: white !important;
+    margin-top: 10px;
+  }
+  
+  .footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .footer a {
+    color: #7b68ee;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 5px;
+  }
+  html, body {
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* מונע גלילה לצדדים */
+    overflow-y: auto;   /* מאפשר גלילה למטה */
+}

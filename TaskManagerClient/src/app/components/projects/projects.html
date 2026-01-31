@@ -1,0 +1,68 @@
+<div class="dashboard-wrapper" dir="rtl">
+    <div class="container">
+      
+      <button mat-button routerLink="/teams" class="back-btn">
+        <mat-icon>arrow_forward</mat-icon>
+        חזרה לצוותים
+      </button>
+  
+      <header class="page-header">
+        <h2>פרויקטים של הצוות</h2>
+        <p>כאן תוכלו לראות ולנהל את כל הפרויקטים המשויכים לצוות זה</p>
+      </header>
+  
+      <div class="add-project-section">
+        <mat-form-field appearance="outline" class="add-input">
+          <mat-label>שם פרויקט חדש</mat-label>
+          <input 
+            matInput 
+            [(ngModel)]="newProjectName" 
+            (keyup.enter)="addProject()"
+            placeholder="למשל: השקת גרסה 2.0">
+          <mat-icon matSuffix>assignment_add</mat-icon>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" class="create-btn" 
+                (click)="addProject()" [disabled]="!newProjectName.trim()">
+          הוסף פרויקט
+        </button>
+      </div>
+  
+      <mat-divider></mat-divider>
+  
+      <div class="projects-grid">
+        @for (project of projects(); track project.id) {
+            <mat-card class="project-mini-card">
+                <mat-card-content>
+                  <div class="project-info">
+                    <mat-icon class="project-icon">folder_open</mat-icon>
+                    <h3>{{ project.name }}</h3>
+                  </div>
+                  
+                  <div class="project-actions">
+                    <button mat-icon-button color="primary" (click)="editProject(project)" matTooltip="ערוך פרויקט">
+                      <mat-icon>edit</mat-icon>
+                    </button>
+              
+                    <button mat-icon-button color="warn" (click)="deleteProject(project.id)" matTooltip="מחק פרויקט">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+              
+                    <mat-divider vertical style="height: 24px; margin: 0 10px;"></mat-divider>
+              
+                    <button mat-stroked-button color="primary" [routerLink]="['/projects', project.id, 'tasks']">
+                      צפה במשימות
+                      <mat-icon>chevron_left</mat-icon>
+                    </button>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+        } @empty {
+          <div class="empty-state">
+            <mat-icon>folder_off</mat-icon>
+            <p>אין פרויקטים בצוות זה עדיין.</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>

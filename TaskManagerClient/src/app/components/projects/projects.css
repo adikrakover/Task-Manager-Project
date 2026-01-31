@@ -1,0 +1,302 @@
+/* עיצוב כללי למעטפת */
+.dashboard-wrapper {
+    padding: 48px 32px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #f0f2f5 100%);
+    min-height: 100vh;
+    direction: rtl;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+  }
+  
+  /* כפתור חזרה */
+  .back-btn {
+    margin-bottom: 32px !important;
+    color: #6c757d !important;
+    font-weight: 600 !important;
+    padding: 8px 20px !important;
+    border-radius: 12px !important;
+    transition: all 0.2s ease !important;
+    background: white !important;
+    border: 1px solid #e8eaed !important;
+  }
+  
+  .back-btn:hover {
+    background: #f8f9fa !important;
+    color: #7b68ee !important;
+    border-color: #7b68ee !important;
+    transform: translateX(4px);
+  }
+  
+  .back-btn mat-icon {
+    margin-left: 8px;
+  }
+  
+  /* כותרת העמוד */
+  .page-header {
+    margin-bottom: 40px;
+  }
+  
+  .page-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1c1f23;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  
+  .page-header p {
+    font-size: 15px;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+ /* אזור הוספת פרויקט */
+.add-project-section {
+    display: flex;
+    gap: 16px;
+    margin: 32px 0;
+    align-items: center;
+    justify-content: space-between; /* מפזר את האלמנטים */
+    background: white;
+    padding: 28px 32px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e8eaed;
+    transition: all 0.2s ease;
+  }
+  
+  .add-project-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .add-input {
+    flex-grow: 1;
+    max-width: 600px;
+    margin-left: auto; /* דוחף את ה-input לימין */
+  }
+  
+  .create-btn {
+    height: 56px;
+    padding: 0 32px !important;
+    background-color: #7b68ee !important;
+    color: white !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    box-shadow: 0 2px 8px rgba(123, 104, 238, 0.25) !important;
+    transition: all 0.2s ease !important;
+    flex-shrink: 0; /* מונע מהכפתור להתכווץ */
+  }
+  /* כרטיס פרויקט */
+  .project-mini-card {
+    border-radius: 16px !important;
+    border: 1px solid #e8eaed !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    overflow: hidden;
+    background: white;
+  }
+  
+  .project-mini-card:hover {
+    transform: translateX(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.06) !important;
+    border-color: #7b68ee !important;
+    background: linear-gradient(90deg, #fafbff 0%, #ffffff 100%);
+  }
+  
+  .project-mini-card mat-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px !important;
+    gap: 20px;
+  }
+  
+  /* אזור מידע הפרויקט */
+  .project-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+  }
+  
+  .project-icon {
+    font-size: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    color: #7b68ee !important;
+    background: linear-gradient(135deg, #f0eeff 0%, #e8e4ff 100%);
+    padding: 12px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+  }
+  
+  .project-mini-card:hover .project-icon {
+    background: linear-gradient(135deg, #7b68ee 0%, #9b8aef 100%);
+    color: white !important;
+    transform: scale(1.05);
+  }
+  
+  .project-info h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1c1f23;
+    letter-spacing: -0.3px;
+  }
+  
+  /* אזור פעולות */
+  .project-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  
+  .project-actions button[mat-icon-button] {
+    transition: all 0.2s ease !important;
+    border-radius: 8px !important;
+  }
+  
+  .project-actions button[mat-icon-button]:hover {
+    background-color: #f8f9fa !important;
+    transform: scale(1.1);
+  }
+  
+  .project-actions button[mat-icon-button][color="primary"]:hover {
+    background-color: #f0eeff !important;
+  }
+  
+  .project-actions button[mat-icon-button][color="warn"]:hover {
+    background-color: #ffebee !important;
+  }
+  
+  .project-actions mat-divider {
+    margin: 0 8px !important;
+    height: 28px !important;
+    opacity: 0.3;
+  }
+  
+  .project-actions button[mat-stroked-button] {
+    border-radius: 12px !important;
+    padding: 0 24px !important;
+    height: 42px !important;
+    font-weight: 600 !important;
+    border: 2px solid #7b68ee !important;
+    color: #7b68ee !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  .project-actions button[mat-stroked-button]:hover {
+    background-color: #7b68ee !important;
+    color: white !important;
+    transform: translateX(-3px);
+    box-shadow: 0 4px 12px rgba(123, 104, 238, 0.3);
+  }
+  
+  .project-actions button[mat-stroked-button] mat-icon {
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+  }
+  
+  .project-actions button[mat-stroked-button]:hover mat-icon {
+    transform: translateX(-3px);
+  }
+  
+  /* מצב ריק */
+  .empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    color: #6c757d;
+    background: white;
+    border-radius: 20px;
+    border: 2px dashed #dee2e6;
+    margin-top: 32px;
+  }
+  
+  .empty-state mat-icon {
+    font-size: 72px !important;
+    width: 72px !important;
+    height: 72px !important;
+    margin-bottom: 20px;
+    color: #adb5bd;
+  }
+  
+  .empty-state p {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  /* עיצוב SweetAlert2 */
+  .swal2-popup {
+    direction: rtl !important;
+    font-family: 'Roboto', 'Heebo', sans-serif;
+    border-radius: 20px !important;
+    padding: 32px !important;
+  }
+  
+  .swal2-title {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+  }
+  
+  .swal2-input {
+    border-radius: 12px !important;
+    border: 2px solid #e8eaed !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+  }
+  
+  .swal2-input:focus {
+    border-color: #7b68ee !important;
+    box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.1) !important;
+  }
+  
+  .swal2-confirm {
+    border-radius: 12px !important;
+    padding: 12px 32px !important;
+    font-weight: 600 !important;
+  }
+  
+  .swal2-cancel {
+    border-radius: 12px !important;
+    padding: 12px 32px !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .dashboard-wrapper {
+      padding: 32px 20px;
+    }
+  
+    .project-mini-card mat-card-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  
+    .project-actions {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .add-project-section {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .add-input {
+      max-width: 100%;
+    }
+  
+    .create-btn {
+      width: 100%;
+    }
+  }
