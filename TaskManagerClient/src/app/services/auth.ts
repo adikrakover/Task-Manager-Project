@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = environment.apiUrl; 
-
+// במקום להשתמש ב-environment, נכתוב את זה ישירות:
+private apiUrl = 'https://wolf-tasks-server-n3vx.onrender.com/api';
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string): Observable<any> {
