@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
  
-  private apiUrl = environment.apiUrl; 
-
+  // private apiUrl = environment.apiUrl; 
+  private apiUrl = 'https://wolf-tasks-server-n3vx.onrender.com/api';
   constructor(private http: HttpClient) {
     console.log('API URL:', this.apiUrl);
   }
